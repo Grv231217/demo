@@ -1,0 +1,206 @@
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (master)
+$ mkdir first_git_repo
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (master)
+$ ls
+README.md  first_git_repo/  greeting.txt  grv
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (master)
+$ nano hello_world.txt
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (master)
+$ cat hello_world.txt
+Git development began in April 2005 after many developers of the Linux kernel gave up access to BitKeeper, a proprietary source control management system that had previously been used to maintain the project.[10] The copyright holder of BitKeeper, Larry McVoy, had withdrawn gratis use of the product after claiming that Andrew Tridgell had reverse-engineered the BitKeeper protocols. Torvalds wanted a distributed system that he could use like BitKeeper, but none of the available free systems met his needs, particularly in terms of performance. Torvalds took an example of an SCM system requiring thirty seconds to apply a patch and update all associated metadata, and noted that this would not scale to the needs of Linux kernel development, where syncing with fellow maintainers could require 250 such actions at a time. He wanted patching to take three seconds,[6] and had several other design criteria in mind: take Concurrent Versions System (CVS) as an example of what not to do; if in doubt, make the exact opposite decision[8] support a distributed, BitKeeper-like workflow[8] very strong safeguards against corruption, either accidental or malicious.[7] These three criteria eliminated every then-existing version control system, except for Monotone. Considering performance excluded this too.[8] So immediately after the 2.6.12-rc2 Linux kernel development release,[8] Torvalds set out to write his own.[8] Torvalds has quipped about the name git, which is British English slang meaning "unpleasant person". Torvalds said: "I'm an egotistical bastard, and I name all my projects after myself. First 'Linux', now 'git'."[11][12] The man page describes Git as "the stupid content tracker".[13] The development of Git began on 3 April 2005.[14] The project was announced on 6 April,[15] and became self-hosting as of 7 April.[14] The first merge of multiple branches was done on 18 April.[16] Torvalds achieved his performance goals; on 29 April, the nascent Git was benchmarked recording patches to the Linux kernel tree at the rate of 6.7 per second.[17] On 16 June Git managed the kernel 2.6.12 release.[18] Torvalds turned over maintenance on 26 July 2005 to Junio Hamano, a major contributor to the project.[19] Hamano was responsible for the 1.0 release on 21 December 2005, and remains the project's maintainer.[20]
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        hello_world.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (master)
+$ git add hello_world.txt
+warning: LF will be replaced by CRLF in hello_world.txt.
+The file will have its original line endings in your working directory
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (master)
+$ git commit -m "assignment1"
+[master 1ff7315] assignment1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello_world.txt
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (master)
+$ git push https://github.com/Grv231217/zemoso-training.git master
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (14/14), 2.32 KiB | 1.16 MiB/s, done.
+Total 14 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/Grv231217/zemoso-training/pull/new/master
+remote:
+To https://github.com/Grv231217/zemoso-training.git
+ * [new branch]      master -> master
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (master)
+$ git diff
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (master)
+$ nano hello_world.txt
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (master)
+$ git diff
+warning: LF will be replaced by CRLF in hello_world.txt.
+The file will have its original line endings in your working directory
+diff --git a/hello_world.txt b/hello_world.txt
+index bab22f2..50051e8 100644
+--- a/hello_world.txt
++++ b/hello_world.txt
+@@ -1 +1 @@
+-Git development began in April 2005 after many developers of the Linux kernel gave up access to BitKeeper, a proprietary source control management system that had previously been used to maintain the project.[10] The copyright holder of BitKeeper, Larry McVoy, had withdrawn gratis use of the product after claiming that Andrew Tridgell had reverse-engineered the BitKeeper protocols. Torvalds wanted a distributed system that he could use like BitKeeper, but none of the available free systems met his needs, particularly in terms of performance. Torvalds took an example of an SCM system requiring thirty seconds to apply a patch and update all associated metadata, and noted that this would not scale to the needs of Linux kernel development, where syncing with fellow maintainers could require 250 such actions at a time. He wanted patching to take three seconds,[6] and had several other design criteria in mind: take Concurrent Versions System (CVS) as an example of what not to do; if in doubt, make the exact opposite decision[8] support a distributed, BitKeeper-like workflow[8] very strong safeguards against corruption, either accidental or malicious.[7] These three criteria eliminated every then-existing version control system, except for Monotone. Considering performance excluded this too.[8] So immediately after the 2.6.12-rc2 Linux kernel development release,[8] Torvalds set out to write his own.[8] Torvalds has quipped about the name git, which is British English slang meaning "unpleasant person". Torvalds said: "I'm an egotistical bastard, and I name all my projects after myself. First 'Linux', now 'git'."[11][12] The man page describes Git as "the stupid content tracker".[13] The development of Git began on 3 April 2005.[14] The project was announced on 6 April,[15] and became self-hosting as of 7 April.[14] The first merge of multiple branches was done on 18 April.[16] Torvalds achieved his performance goals; on 29 April, the nascent Git was benchmarked recording patches to the Linux kernel tree at the rate of 6.7 per second.[17] On 16 June Git managed the kernel 2.6.12 release.[18] Torvalds turned over maintenance on 26 July 2005 to Junio Hamano, a major contributor to the project.[19] Hamano was responsible for the 1.0 release on 21 December 2005, and remains the project's maintainer.[20]
++Git development began in April 2005 after many developers of the Linux kernel gave up access Gaurav_verma  BitKeeper, a proprietary source control management system that had previously been used Gaurav_verma  maintain the project.[10] The copyright holder of BitKeeper, Larry McVoy, had withdrawn gratis use of the product after claiming that Andrew Tridgell had reverse-engineered the BitKeeper protocols. Torvalds wanted a distributed system that he could use like BitKeeper, but none of the available free systems met his needs, particularly in terms of performance. Torvalds took an example of an SCM system requiring thirty seconds Gaurav_verma  apply a patch and update all associated metadata, and noted that this would not scale Gaurav_verma  the needs of Linux kernel development, where syncing with fellow maintainers could require 250 such actions at a time. He wanted patching Gaurav_verma  take three seconds,[6] and had several other design criteria in mind: take Concurrent Versions System (CVS) as an example of what not Gaurav_verma  do; if in doubt, make the exact opposite decision[8] support a distributed, BitKeeper-like workflow[8] very strong safeguards against corruption, either accidental or malicious.[7] These three criteria eliminated every then-existing version control system, except for Monotone. Considering performance excluded this too.[8] So immediately after the 2.6.12-rc2 Linux kernel development release,[8] Torvalds set out Gaurav_verma  write his own.[8] Torvalds has quipped about the name git, which is British English slang meaning "unpleasant person". Torvalds said: "I'm an egotistical bastard, and I name all my projects after myself. First 'Linux', now 'git'."[11][12] The man page describes Git as "the stupid content tracker".[13] The development of Git began on 3 April 2005.[14] The project was announced on 6 April,[15] and became self-hosting as of 7 April.[14] The first merge of multiple branches was done on 18 April.[16] Torvalds achieved his performance goals; on 29 April, the nascent Git was benchmarked recording patches Gaurav_verma  the Linux kernel tree at the rate of 6.7 per second.[17] On 16 June Git managed the kernel 2.6.12 release.[18] Torvalds turned over maintenance on 26 July 2005 Gaurav_verma  Junio Hamano, a major contributor Gaurav_verma  the project.[19] Hamano was responsible for the 1.0 release on 21 December 2005, and remains the project's maintainer.[20]
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello_world.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (master)
+$ git add hello_world.txt
+warning: LF will be replaced by CRLF in hello_world.txt.
+The file will have its original line endings in your working directory
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (master)
+$ git commit -m "assignment1-1"
+[master f2e1a6c] assignment1-1
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ rewrite hello_world.txt (97%)
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (master)
+$ git push https://github.com/Grv231217/zemoso-training.git master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 375 bytes | 375.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Grv231217/zemoso-training.git
+   1ff7315..f2e1a6c  master -> master
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (master)
+$ git branch new_branch
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (master)
+$ git checkout new_branch
+Switched to branch 'new_branch'
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (new_branch)
+$ nano hello_world.txt
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (new_branch)
+$ git status
+On branch new_branch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello_world.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (new_branch)
+$ git add hello_world.txt
+warning: LF will be replaced by CRLF in hello_world.txt.
+The file will have its original line endings in your working directory
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (new_branch)
+$ git commit -m "assigment1-2"
+[new_branch 260592c] assigment1-2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ rewrite hello_world.txt (84%)
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (new_branch)
+$ git push https://github.com/Grv231217/zemoso-training.git new_branch
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 340 bytes | 340.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'new_branch' on GitHub by visiting:
+remote:      https://github.com/Grv231217/zemoso-training/pull/new/new_branch
+remote:
+To https://github.com/Grv231217/zemoso-training.git
+ * [new branch]      new_branch -> new_branch
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (new_branch)
+$ git checkout master
+Switched to branch 'master'
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (master)
+$ git pull master new_branch
+fatal: 'master' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (master)
+$ git checkout new_branch
+Switched to branch 'new_branch'
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (new_branch)
+$ git pull new_branch https://github.com/Grv231217/zemoso-training.git
+fatal: invalid refspec 'https://github.com/Grv231217/zemoso-training.git'
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (new_branch)
+$ git pull https://github.com/Grv231217/zemoso-training.git new_branch
+From https://github.com/Grv231217/zemoso-training
+ * branch            new_branch -> FETCH_HEAD
+Already up to date.
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (new_branch)
+$ ls
+README.md  first_git_repo/  greeting.txt  grv  hello_world.txt
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (new_branch)
+$ mkdir git_clone_repo
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo (new_branch)
+$ cd git_clone_repo/
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo/git_clone_repo (new_branch)
+$ git clone https://github.com/Grv231217/zemoso-training.git
+Cloning into 'zemoso-training'...
+remote: Enumerating objects: 23, done.
+remote: Counting objects: 100% (23/23), done.
+remote: Compressing objects: 100% (13/13), done.
+remote: Total 23 (delta 6), reused 18 (delta 4), pack-reused 0
+Receiving objects: 100% (23/23), done.
+Resolving deltas: 100% (6/6), done.
+
+gv231@LAPTOP-M3ET0I21 MINGW64 ~/git_demo/git_clone_repo (new_branch)
+$
